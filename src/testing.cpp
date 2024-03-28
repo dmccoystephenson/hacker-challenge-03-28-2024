@@ -63,11 +63,10 @@ int test1() {
 }
 
 int runTests() {
-    
     int result = 0;
     result &= test1();
 
-    if (result) {
+    if (result == 0) {
         std::cout << "Tests Succeeded!" << std::endl;
         return 0;
     }
@@ -78,8 +77,13 @@ int runTests() {
 }
 
 int main() {
-    std::string toPrint = "Hacker Challenge 3/28/2024";
-    log(toPrint);
+    bool shouldRunTests = false;
+
+    if (shouldRunTests) {
+        runTests();
+    }
+    
+    std::cout << "=== Hacker Challenge 3/28/2024 ===" << std::endl;
 
     // prepare
     std::list<int> listenerPositions = {1, 5, 11, 20};
